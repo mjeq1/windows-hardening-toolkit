@@ -1,40 +1,34 @@
 # windows-hardening-toolkit
-# Windows Hardening ToolKit
+# Windows Hardening Toolkit
 
-**By:** Jeremias Quintero (mjeq)
-
+**Created By:** mjeq (Jeremias Quintero)
 ---
 
-# Overview
-The following repository holds a set of **PowerShell Automation Scripts** which are intended to automate **System Hardening** and **Endpoint Optimization** for **Windows 10/11**. The purpose of this collection is to reduce the **attack surface** of your Windows Systems by turning off **Telemetry**, and by **managing** **non-essential Services**.
+# Description 
+This repository contains **PowerShell automation scripts** that can be used to **automate hardening** and **endpoint optimization** of **Windows 10/11 systems**. The main goal of this collection of scripts is to **reduce the attack surface** of your **Windows systems** by disabling **telemetry**, and also **managing non-essential services**.
 
+# Tools
+## Privacy Hardener
 
-# Components
+* **First Safety**: Creates a **System Restore Point** before the changes are made to your Windows System.
+* **Private**: Sets **Windows Telemetry** to the **security level (0)** and disables telemetry functionality.
+* **Optimize**: Stops known tracking services (`DiagTrack` , `dmwappushservice`) from running.
 
-## privacy_hardener.ps1
+# How to Use
 
-* **Safety First**: Creates a **System Restore Point** before it will make any **changes** to your Windows System.
-* **Privacy**: Sets **Windows Telemetry** to the **'Security'** Level (**0**) and restricts its functionality.
-* **Optimization**: Stops **known Tracking Services** (`DiagTrack`, `dmwappushservice`) from running.
+> **WARNING ⚠️ :** Always test these scripts **in a test environment** prior to testing them in a **production environment**.
 
-
-# Usage
-
-> **WARNING ⚠️ :** Please run these scripts **in a test environment** prior to using them in production.
-
-
-1. Launch **PowerShell as Administrator**.
+1. Start **PowerShell as an administrator**.
 2. Run the script:
 ```powershell
 .\privacy_hardener.ps1
 
+# Revert
+# If there is a problem with the **script**, or you want to **reverse** all the **changes**, then follow the steps below:
 
-# Undo
-# If there's an issue with the **script**, or if you would like to **undo** all the **changes**, then follow the steps below:
-
-# How to restore your system:
+# To restore your system:
 Press Win + R on your keyboard.
-Type rstrui.exe and press Enter.
+Type rstrui.exe and click enter.
 Select "Choose a different restore point".
-Look for the snapshot named: **Pre-Hardening-mjeq**.
-Follow the **prompts** to restore your Windows to the **exact same state** that it was in before the **script ran**.
+Find the name of the **snapshot** : **Pre-Hardening-mjeq**.
+Follow the prompts to restore your Windows to the exact same **state** that it was in when the **script ran**.
