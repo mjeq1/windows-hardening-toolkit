@@ -1,7 +1,7 @@
 # windows-hardening-toolkit
-# Windows Hardening Toolkit
+# Windows Hardening Toolkit (BETA)
 
-**Created By:** mjeq (Jeremias Quintero)
+**Created By:** Jeremias Quintero
 ---
 
 # Description 
